@@ -1,20 +1,16 @@
 
 
-**La Experiencia Meteorológica Más Hermosa del Mundo**
-
-
-
 <div align="center">
-  <h3># ☣️ WeatherReactor</h3>
+  <h3> ☣️ WeatherReactor</h3>
   <p>Aplicación Web moderna y elegante para consultar el clima actual y pronósticos meteorológicos, construida con React, TypeScript y Tailwind.</p>
 
   <a href="https://weatherreator.netlify.app" target="_blank">
     <img src="https://img.shields.io/badge/🌐_Demo_Live-FF6B6B?style=for-the-badge" alt="Demo Live" />
   </a>
 </div>
-<img src="Demo1.png" alt="Demo"/>
-<img src="Demo2.png" alt="Demo"/>
-<img src="Demo3.png" alt="Demo"/>
+<img src="public/Demo1.png" alt="Demo"/>
+<img src="public/Demo2.png" alt="Demo"/>
+<img src="public/Demo3.png" alt="Demo"/>
 
 ![WeatherReactor](https://img.shields.io/badge/React-18+-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue?style=for-the-badge&logo=typescript)
@@ -89,8 +85,8 @@ Este proyecto está bajo la Licencia MIT.
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- GitHub: [@Facu14carrizo](https://github.com/Facu14carrizo)
+**Facu14carrizo**
+- LinkedIn: [@facu14carrizo](https://www.linkedin.com/in/facu14carrizo)
 
 
 <div align="center">
