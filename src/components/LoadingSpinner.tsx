@@ -5,9 +5,11 @@ import { translateText } from '../utils/weatherHelpers';
 
 interface LoadingSpinnerProps {
   settings?: WeatherSettings;
+  onSkip?: () => void;
+  showSkipButton?: boolean;
 }
 
-export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ settings }) => {
+export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ settings, onSkip, showSkipButton = false }) => {
   const language = settings?.language || 'es';
   
   return (
@@ -52,6 +54,19 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ settings }) => {
             />
           ))}
         </div>
+
+        {/* Skip button */}
+        {showSkipButton && onSkip && (
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 0.5 }}
+            onClick={onSkip}
+            className="mt-6 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white text-sm transition-all duration-300"
+          >
+            Saltar geolocalización
+          </motion.button>
+        )}
       </div>
     </div>
   );

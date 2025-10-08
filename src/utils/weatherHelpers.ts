@@ -259,10 +259,11 @@ export const getWeatherMessage = (weather: string, temp: number): string => {
 };
 
 export const formatTime = (timestamp: number, timezone: number = 0): string => {
-  const locale = 'en-US'; // Will be handled by component level
-  return new Date((timestamp + timezone) * 1000).toLocaleTimeString(locale, {
+  return new Date(timestamp * 1000).toLocaleTimeString('es-AR', {
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'America/Argentina/Buenos_Aires'
   });
 };
 

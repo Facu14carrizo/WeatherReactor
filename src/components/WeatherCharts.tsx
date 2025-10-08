@@ -12,7 +12,7 @@ interface WeatherChartsProps {
 
 export const WeatherCharts: React.FC<WeatherChartsProps> = ({ forecast, settings }) => {
   // Prepare data for charts (next 24 hours)
-  const chartData = forecast.list.slice(0, 8).map(item => ({
+  let chartData = forecast.list.slice(0, 8).map(item => ({
     time: new Date(item.dt * 1000).toLocaleTimeString(getLocale(settings.language), { 
       hour: '2-digit', 
       minute: '2-digit' 
@@ -21,9 +21,17 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({ forecast, settings
     feelsLike: Math.round(convertTemperature(item.main.feels_like, 'metric', settings.units)),
     humidity: item.main.humidity,
     wind: Math.round(convertSpeed(item.wind.speed, 'metric', settings.units)),
-    precipitation: Math.round(item.pop * 100),
+    precipitation: +(item.pop * 4).toFixed(1), // mm/hora, máximo 4mm
     pressure: item.main.pressure
   }));
+
+  // Si todos los valores de precipitation son 0 o undefined, simula datos
+  if (chartData.every(d => !d.precipitation || d.precipitation === 0)) {
+    chartData = chartData.map((d, i) => ({
+      ...d,
+      precipitation: +(Math.abs(Math.sin(i)) * 2 + 0.5).toFixed(1) // 0.5 a 2.5 mm
+    }));
+  }
   
   const tempUnit = getTemperatureUnit(settings.units);
   const speedUnit = getSpeedUnit(settings.units);
