@@ -259,13 +259,19 @@ function App() {
 
             {/* Footer */}
             <footer className="text-center py-8 text-white/60">
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
+                className="flex items-center justify-center space-x-3"
               >
-                © 2025 WeatherLux - La Experiencia Meteorológica Más Hermosa del Mundo
-              </motion.p>
+                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-lg font-bold text-white">☣️</span>
+                </div>
+                <p>
+                  © 2025 <span className="font-bold text-white/80">WeatherReactor</span> - La Experiencia Meteorológica Más Hermosa del Mundo
+                </p>
+              </motion.div>
             </footer>
           </div>
 
